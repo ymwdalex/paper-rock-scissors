@@ -1,3 +1,6 @@
+## Demo
+![Demo](https://cloud.githubusercontent.com/assets/1458656/26531773/8c3eac16-43f0-11e7-8254-6b01f5f8a3db.gif)
+
 ## Install
 
 
