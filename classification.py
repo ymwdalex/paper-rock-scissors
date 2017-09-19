@@ -25,6 +25,9 @@ from keras import applications
 
 from utils import *
 
+import redis
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
+
 
 HAND_TYPE_STRING_LIST = ['paper', 'rock', 'scissors']
 
@@ -75,6 +78,8 @@ def classify(model_type):
 
         classification = model.predict(input_data, batch_size=1, verbose=0)
         result_string = HAND_TYPE_STRING_LIST[np.argmax(classification)]
+
+        r.set('foo', result_string)
 
         cv2.putText(show_frame,
                     result_string,
